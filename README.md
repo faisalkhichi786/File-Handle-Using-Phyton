@@ -265,7 +265,7 @@ Because the application works with local file paths, it should be run in an envi
 
 1. Clone the Repository
 
-git clone https://github.com/YOUR_USERNAME/File-Ops-Console.git
+git clone https://github.com/faisalkhichi786
 
 2. Open the Project Folder
 
