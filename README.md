@@ -1,390 +1,387 @@
-# 🗂️ File Ops Console
+🗂️ File Ops Console
 
-A lightweight, professional **local file management application** built
-with **Python and Streamlit**.
+A professional local file management application built with Python and Streamlit.
 
-File Ops Console provides a simple web-based interface for performing
-common file operations directly from your local environment ---
-including **creating, reading, renaming, appending, overwriting, and
-deleting files**.
+File Ops Console provides a simple, interactive interface for performing common text-file operations from a local environment, including create, read, rename, append, overwrite, and delete actions.
 
-The application is designed with a clean console-style interface, clear
-operation feedback, and an activity log that records file actions during
-the current session.
+The application combines straightforward file-system functionality with a clean console-style UI, input validation, error handling, and a session-based activity log.
 
-------------------------------------------------------------------------
+📌 Project Overview
 
-## 📌 Project Overview
+File Ops Console was developed to provide an easy-to-use alternative to performing basic file operations directly from the command line or file explorer.
 
-File management is often performed through command-line tools or
-operating-system file explorers. This project provides an alternative
-approach by wrapping common file operations inside an easy-to-use
-Streamlit interface.
+The application organizes file management into four main operations:
 
-The application is focused on four core operations:
+Operation
 
--   **Create** --- Create a new text file and write content to it.
--   **Read** --- Read and preview the contents of an existing text file.
--   **Update** --- Rename a file, append content, or overwrite existing
-    content.
--   **Delete** --- Permanently delete a file after explicit
-    confirmation.
+Functionality
 
-The application uses Python's built-in `pathlib` library for file-system
-operations and Streamlit for the user interface.
+📄 Create
 
-------------------------------------------------------------------------
+Create a new text file and write content
 
-# ✨ Key Features
+👁️ Read
 
-### 📄 Create Files
+Read and preview an existing text file
 
-Create a new file by providing:
+✏️ Update
 
--   File name
--   File content
+Rename, append content, or overwrite a file
 
-The application checks whether the file already exists before creating
-it.
+🗑️ Delete
 
-### 👁️ Read Files
+Delete an existing file with confirmation
 
-Read an existing UTF-8 text file and display its contents directly
-inside the application.
+The project uses Python's built-in pathlib module for file-system operations and Streamlit for the interactive user interface.
 
-The application also handles common conditions such as:
+✨ Key Features
 
--   Missing files
--   Invalid file paths
--   Non-file paths
--   UTF-8 decoding errors
--   Permission errors
+📄 Create File
 
-### ✏️ Update Files
+Create a new text file by entering:
 
-The update section provides three operations:
+File name
 
-#### Rename
+File content
 
-Rename an existing file while checking for:
+The application checks whether a file with the same name already exists before creating it.
 
--   Empty file names
--   Missing files
--   Existing destination names
--   Permission errors
+👁️ Read File
 
-#### Append Content
+Read an existing UTF-8 text file and preview its content inside the application.
 
-Add new content to the end of an existing file.
+Validation and error handling include:
 
-A newline is automatically added when the existing file already contains
-data.
+Empty file names
 
-#### Overwrite File
+Missing files
 
-Replace the existing contents of a file with new content.
+Non-file paths
 
-### 🗑️ Delete Files
+Invalid UTF-8 text
 
-Delete an existing file with an explicit confirmation checkbox to help
-prevent accidental deletion.
+Permission errors
 
-### 📋 Activity Log
+Other operating-system file errors
 
-The application maintains a session-based activity log showing:
+✏️ Update File
 
--   Operation status
--   Timestamp
--   Action message
+The Update section provides three file-management options.
 
-Successful, informational, and failed operations are visually
-distinguished in the interface.
+Rename
 
-------------------------------------------------------------------------
+Rename an existing file while validating:
 
-# 🖥️ Application Interface
+Source file existence
 
-The application uses a clean desktop-style interface with:
+Destination file name
 
--   Sidebar navigation
--   Operation-specific panels
--   File path indicator
--   Dark input fields
--   Activity console
--   Clear success and error feedback
--   Responsive Streamlit layout
+Duplicate destination names
 
-------------------------------------------------------------------------
+Permissions
 
-# 📸 Application Screenshots
+Append Content
 
-## Create File
+Add new text to the end of an existing file.
 
-![Create File]Create File.png
+When the file already contains data, the application adds a newline before the appended content.
 
-Create a new file and write content directly through the interface.
+Overwrite File
 
-------------------------------------------------------------------------
+Replace the current file contents with new content.
 
-## Read File
+🗑️ Delete File
 
-![Read File]Read File.png
+Delete an existing file after an explicit confirmation step to reduce accidental deletion.
+
+📋 Activity Log
+
+The application maintains a session-based activity log containing:
+
+Operation status
+
+Timestamp
+
+Action message
+
+The log records successful, informational, and failed operations.
+
+🖥️ Application Interface
+
+The interface is designed around a clean console-style workflow with:
+
+Sidebar operation navigation
+
+Operation-specific panels
+
+File name and content inputs
+
+File path indicator
+
+Interactive controls
+
+Activity console
+
+Success and error feedback
+
+Responsive Streamlit layout
+
+📸 Application Screenshots
+
+Create File
+
+Create a new file and enter its content directly through the application.
+
+
+
+Read File
 
 Read and preview the contents of an existing text file.
 
-------------------------------------------------------------------------
 
-## Update File
 
-![Update File]Update File.png
+Update File
 
-Rename files, append content, or overwrite existing file contents.
+Rename an existing file, append content, or overwrite its contents.
 
-------------------------------------------------------------------------
 
-## Delete File
 
-![Delete File]Delete File.png
+Delete File
 
-Delete an existing file after confirming that the operation cannot be
-undone.
+Delete an existing file after confirming the operation.
 
-------------------------------------------------------------------------
 
-# 🛠️ Technology Stack
 
--   **Python**
--   **Streamlit**
--   **pathlib**
--   **datetime**
--   **HTML/CSS**
--   **Python Session State**
+⚙️ How It Works
 
-### Core Python Components
+                    FILE OPS CONSOLE
+                           │
+              ┌────────────┼────────────┐
+              │            │            │
+           CREATE         READ        UPDATE
+              │            │       ┌────┼────┐
+              │            │       │    │    │
+              │            │    Rename Append Overwrite
+              │            │
+              └────────────┼────────────┘
+                           │
+                         DELETE
+                           │
+                           ▼
+                    ACTIVITY LOG
 
-The application uses:
+🛠️ Technology Stack
 
-``` text
+Python
+
 Streamlit
-    ├── User Interface
-    ├── Navigation
-    ├── Forms & Inputs
-    └── Session State
 
 pathlib
-    ├── File Creation
-    ├── File Reading
-    ├── File Renaming
-    └── File Deletion
 
 datetime
-    └── Activity Log Timestamps
-```
 
-------------------------------------------------------------------------
+HTML/CSS
 
-# ⚙️ How It Works
+Streamlit Session State
 
-``` text
-                File Ops Console
-                       │
-          ┌────────────┼────────────┐
-          │            │            │
-        Create        Read        Update
-          │            │            │
-          │            │       ┌────┼────┐
-          │            │       │    │    │
-          │            │    Rename Append Overwrite
-          │            │
-          └────────────┼────────────┘
-                       │
-                     Delete
-                       │
-                       ▼
-                Activity Log
-```
+Core Components
 
-------------------------------------------------------------------------
+Python
+├── pathlib
+│   ├── Create files
+│   ├── Read files
+│   ├── Rename files
+│   └── Delete files
+│
+├── datetime
+│   └── Activity timestamps
+│
+└── Streamlit
+    ├── User interface
+    ├── Navigation
+    ├── Inputs
+    ├── Buttons
+    └── Session state
 
-# 🚀 Installation & Setup
+🧠 Skills Demonstrated
 
-## 1. Clone the Repository
+This project demonstrates practical skills in:
 
-``` bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-```
+Python Programming
 
-## 2. Navigate to the Project
+Streamlit Application Development
 
-``` bash
-cd YOUR_REPOSITORY
-```
+File-System Operations
 
-## 3. Install Dependencies
+pathlib
 
-``` bash
+User Input Validation
+
+Exception Handling
+
+Session State Management
+
+Interactive UI Development
+
+HTML/CSS Customization
+
+Activity Logging
+
+Local Application Development
+
+🔍 Error Handling
+
+The application includes validation and error handling for common file-operation scenarios, including:
+
+Empty file names
+
+Existing files during creation
+
+Missing files
+
+Paths that are not files
+
+Duplicate rename targets
+
+Permission errors
+
+Operating-system errors
+
+Invalid UTF-8 text files
+
+Unconfirmed delete operations
+
+Clear messages are added to the activity log when an operation succeeds or fails.
+
+🔒 Local File Operations
+
+File operations are performed using Python's local file-system APIs.
+
+The application uses pathlib.Path to interact with local files and does not require a database for its core functionality.
+
+Because the application works with local file paths, it should be run in an environment where you understand which files and directories it can access.
+
+🚀 Installation & Setup
+
+1. Clone the Repository
+
+git clone https://github.com/YOUR_USERNAME/File-Ops-Console.git
+
+2. Open the Project Folder
+
+cd File-Ops-Console
+
+3. Install Streamlit
+
 pip install streamlit
-```
 
-## 4. Run the Application
+4. Run the Application
 
-``` bash
 streamlit run FIleApp.py
-```
 
-The application will open in your default browser.
+The application will open in your default web browser.
 
-> If you rename the Python file, update the `streamlit run` command
-> accordingly.
+If you rename FIleApp.py, update the command accordingly.
 
-------------------------------------------------------------------------
+📁 Project Structure
 
-# 📁 Project Structure
-
-``` text
 File-Ops-Console/
 │
 ├── FIleApp.py
 ├── README.md
 │
 └── Screenshots/
+    ├── Delete file.png
     ├── Create File.png
     ├── Read File.png
-    ├── Update File.png
-    └── Delete file.png
-```
+    └── Update File.png
 
-------------------------------------------------------------------------
+🎯 Project Objectives
 
-# 🧠 Skills Demonstrated
+The project was created to:
 
-This project demonstrates practical experience with:
+Build a practical Python application
 
--   Python Programming
--   Streamlit Application Development
--   File System Operations
--   Object-Oriented File Handling Concepts
--   `pathlib`
--   Session State Management
--   Exception Handling
--   User Input Validation
--   Interactive UI Development
--   HTML/CSS Customization
--   Activity Logging
--   Local Application Development
+Practice Streamlit development
 
-------------------------------------------------------------------------
+Demonstrate local file-system operations
 
-# 🔍 Error Handling
+Implement input validation
 
-The application includes validation and error handling for common
-file-operation scenarios.
+Handle common file-operation errors
 
-Examples include:
+Provide clear user feedback
 
--   Empty file names
--   Files that already exist
--   Files that do not exist
--   Paths that are not files
--   Permission errors
--   Operating-system file errors
--   Invalid UTF-8 text files
--   Delete operations without confirmation
+Create a foundation for future file-management features
 
-This helps provide clear feedback instead of allowing common
-file-operation failures to terminate the application.
+🚀 Future Enhancements
 
-------------------------------------------------------------------------
+Potential improvements include:
 
-# 🔒 Local File Operations
+📁 Directory browsing
 
-File operations are performed through Python's local file-system APIs.
+🔎 File search
 
-The application uses `pathlib.Path` to interact with files and does not
-require a database for its core functionality.
+📋 File listing and sorting
 
-Because the application operates on local paths, it should be run in an
-environment where you understand which files and directories the
-application can access.
+📊 File metadata and size information
 
-------------------------------------------------------------------------
+📦 Multiple-file operations
 
-# 🎯 Project Goals
+📤 File upload and download
 
-The primary goals of File Ops Console are to:
+🌳 Folder navigation
 
--   Build a practical Python application
--   Demonstrate local file-system operations
--   Practice Streamlit interface development
--   Implement robust input validation
--   Handle common file-operation errors
--   Provide clear user feedback
--   Create a reusable foundation for future file-management features
+📝 Rich text editing
 
-------------------------------------------------------------------------
+📜 Persistent activity history
 
-# 🚀 Future Improvements
+⚙️ Configurable working directories
 
-Possible future enhancements include:
+👨‍💻 About the Developer
 
--   📁 Directory browsing
--   🔎 File search
--   📊 File metadata and size information
--   📋 File listing and sorting
--   📦 Multiple-file operations
--   📤 File upload and download
--   🔐 Improved access controls
--   📝 Rich text editing
--   🌳 Folder navigation
--   📜 Persistent activity history
--   ⚙️ Configurable working directories
+Muhammad Faisal Jahangeer
 
-------------------------------------------------------------------------
+Python Developer | Data Analyst | Data Science & AI/ML Enthusiast
 
-# 👨‍💻 About the Developer
+I build practical Python applications and data-driven projects with a focus on turning technical concepts into useful, real-world solutions.
 
-**Muhammad Faisal Jahangeer**
+Areas of Interest
 
-**Python Developer \| Data Analyst \| Data Science & AI/ML Enthusiast**
+Python Development
 
-I enjoy building practical Python applications and data-driven projects
-that solve real-world problems.
+Data Analytics
 
-My areas of interest include:
+Data Science
 
--   Python Development
--   Data Analytics
--   Data Science
--   Machine Learning
--   Artificial Intelligence
--   Business Intelligence
--   Data Visualization
--   Automation
+Machine Learning
 
-------------------------------------------------------------------------
+Artificial Intelligence
 
-# 🔗 Connect With Me
+Business Intelligence
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Muhammad%20Faisal%20Jahangeer-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammad-faisal-jahangeer-4b38393a8/)
+Data Visualization
 
-------------------------------------------------------------------------
+Automation
 
-# ⭐ Support
+🔗 Connect With Me
+
+
+
+⭐ Support
 
 If you find this project useful:
 
--   ⭐ Star the repository
--   🍴 Fork the project
--   💡 Share suggestions
--   🤝 Connect with me
+⭐ Star the repository
 
-------------------------------------------------------------------------
+🍴 Fork the project
 
-```{=html}
+💡 Share feedback
+
+🤝 Connect with me
+
 <p align="center">
-```
-**Python • Streamlit • File Management • Local Automation**
 
-```{=html}
+Python • Streamlit • File Management • Local Automation
+
 </p>
-```
