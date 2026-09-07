@@ -120,7 +120,7 @@ The application uses a clean desktop-style interface with:
 
 ## Create File
 
-![Create File](Screenshots/Create%20File.png)
+![Create File]Create File.png
 
 Create a new file and write content directly through the interface.
 
@@ -128,7 +128,7 @@ Create a new file and write content directly through the interface.
 
 ## Read File
 
-![Read File](Screenshots/Read%20File.png)
+![Read File]Read File.png
 
 Read and preview the contents of an existing text file.
 
@@ -136,7 +136,7 @@ Read and preview the contents of an existing text file.
 
 ## Update File
 
-![Update File](Screenshots/Update%20File.png)
+![Update File]Update File.png
 
 Rename files, append content, or overwrite existing file contents.
 
@@ -144,7 +144,7 @@ Rename files, append content, or overwrite existing file contents.
 
 ## Delete File
 
-![Delete File](Screenshots/Delete%20file.png)
+![Delete File]Delete File.png
 
 Delete an existing file after confirming that the operation cannot be
 undone.
